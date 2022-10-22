@@ -1,0 +1,150 @@
+
+/*Зробила контейнер для більшої наглядності*/ 
+.ball-container { 
+  background-image: url(../images/gross.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1300px;
+  height: 1000px;
+  overflow: hidden;
+}
+
+/*Властивості мяча*/ 
+.ball { 
+  position: absolute;
+  z-index: 1;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;/*роблю квадрат кругом*/  
+  box-sizing: 0px;
+  background-image: url(../images/boll-pool.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  animation-name: jumping; 
+  animation-duration: 5s; /*час відтворення анімації*/ 
+  animation-iteration-count: infinite; /*кількість програвань анімації - безкінечність*/ 
+  animation-timing-function: linear; /*ф-я розподілу анімованих значень*/
+  
+}
+
+/*АНІМАЦІЯ мяча*/ 
+
+/*Амплітуда, обертання*/ 
+@keyframes jumping {  
+  0% { 
+    transform: translate(0, 0);
+  }
+  20% { 
+    transform: translate(240px, 880px);  
+    height: 90px; width: 105px; /*деформація мячика*/ 
+  }
+  40% { 
+    transform: translate(470px, 240px) rotate(360deg); /*обертання мячика*/
+    width: 100px; height: 100px;
+  }
+  60% { 
+    transform: translate(700px, 880px) rotate(360deg); 
+    height: 90px; width: 105px; /*деформація мячика*/  
+  }
+  80% { 
+    transform: translate(830px, 340px); 
+    width: 100px; height: 100px;
+  }
+  90% { 
+    transform: translate(960px, 880px); 
+    height: 90px; width: 105px; /*деформація мячика*/  
+  }
+  95% { 
+    transform: translate(1040px, 640px); 
+    width: 100px; height: 100px;
+  }
+  100% { 
+    transform: translate(1120px, 880px);  
+    height: 90px; width: 105px; /*деформація мячика*/ 
+  }
+} 
+
+/*Властивості тіні*/ 
+.ball-shadow {
+  width: 70px;
+  height: 30px;
+  border-radius: 35px / 15px; /*тінь від мячика овальної форми*/ 
+  position: absolute;
+  z-index: 0;
+  background: rgba(20, 20, 20, 0.1);
+  box-shadow: 0px 0 20px 20px rgba(20, 20, 20, 0.1);
+  animation-name: shadow; 
+  animation-duration: 5s; /*час відтворення анімації*/ 
+  animation-iteration-count: infinite; /*кількість програвань анімації - безкінечність*/ 
+  animation-timing-function: linear; /*ф-я розподілу анімованих значень*/ 
+}
+
+/*Тінь*/ 
+@keyframes shadow { 
+  0% {
+    transform: translate(0, 940px);
+    width: 30px;
+    height: 20px;
+    border-radius: 15px / 10px; 
+    background: rgba(20, 20, 20, 0.1);
+    box-shadow: 0px 0 20px 20px rgba(20, 20, 20, 0.1);
+  }
+  20% {
+    transform: translate(220px, 940px);
+    width: 70px;
+    height: 30px;
+    border-radius: 35px / 15px; 
+    background: rgba(20, 20, 20, 0.4);
+    box-shadow: 0px 0px 20px 25px rgba(20, 20, 20, 0.4);
+  }
+  40% {
+    transform: translate(450px, 940px);
+    width: 30px;
+    height: 20px;
+    border-radius: 15px / 10px; 
+    background: rgba(20, 20, 20, 0.1);
+    box-shadow: 0px 0px 20px 20px rgba(20, 20, 20, 0.1);
+  }
+  60% {
+    transform: translate(680px, 940px);
+    width: 70px;
+    height: 30px;
+    border-radius: 35px / 15px; 
+    background: rgba(20, 20, 20, 0.4);
+    box-shadow: 0px 0px 20px 25px rgba(20, 20, 20, 0.4);
+  }
+  80% { 
+    transform: translate(810px, 940px);
+    width: 30px;
+    height: 20px;
+    border-radius: 15px / 10px; 
+    background: rgba(20, 20, 20, 0.1);
+    box-shadow: 0px 0px 20px 20px rgba(20, 20, 20, 0.1);
+  }
+  90% {
+    transform: translate(940px, 940px);
+    width: 70px;
+    height: 30px;
+    border-radius: 35px / 15px;  
+    background: rgba(20, 20, 20, 0.4);
+    box-shadow: 0px 0px 20px 25px rgba(20, 20, 20, 0.4);
+  }
+  95% { 
+    transform: translate(1020px, 940px);
+    width: 30px;
+    height: 20px;
+    border-radius: 15px / 10px; 
+    background: rgba(20, 20, 20, 0.1);
+    box-shadow: 0px 0px 20px 20px rgba(20, 20, 20, 0.1);
+  }
+  100% {
+    transform: translate(1100px, 940px);
+    width: 70px;
+    height: 30px;
+    border-radius: 35px / 15px; 
+    background: rgba(20, 20, 20, 0.4);
+    box-shadow: 0px 0px 20px 25px rgba(20, 20, 20, 0.4);
+  }
+} 
+
